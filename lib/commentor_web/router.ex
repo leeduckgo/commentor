@@ -1,6 +1,5 @@
 defmodule CommentorWeb.Router do
   use CommentorWeb, :router
-
   pipeline :browser do
     plug :accepts, ["html"]
     plug :fetch_session
@@ -17,7 +16,7 @@ defmodule CommentorWeb.Router do
 
   scope "/", CommentorWeb do
     pipe_through :browser
-    live "/live/comment", CommentLive, :comment
+    live "/elixir/live/comment", CommentLive, :comment
     live "/", PageLive, :index
   end
 
