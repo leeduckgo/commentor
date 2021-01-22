@@ -1,0 +1,27 @@
+
+<div class="context">
+<%= for comment <- @comments do %>
+    <p class="font-monospace">
+        <b><%= comment.name %></b>
+        <br>
+        <%= comment.context %>
+        <br>
+        <%= comment.inserted_at %>
+        <br>
+    </p>
+    <hr>
+<% end %>
+<br>
+<%= f = form_for @changeset, "#",  [phx_submit: :submit] %>
+    <%= label f , :名字, class: "form-label"%>
+    <%= text_input f, :name, class: "form-control" %>
+    <%= error_tag f, :name %>
+    <br>
+    <%= label f, :说点儿什么 , class: "form-label"%>
+    <%= textarea f, :context, class: "form-control" %>
+    <%= error_tag f, :context %>
+    <br>
+    <div>
+        <%= submit "提交", phx_disable_with: "提交中...",class: "btn btn-info" %>
+    </div>
+</div>
