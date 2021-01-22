@@ -23,7 +23,6 @@ config :logger, level: :info
 # to the previous section and set your `:url` port to 443:
 #
     config :commentor, CommentorWeb.Endpoint,
-      ...
       url: [host: "monthly.leeduckgo.com", port: 443],
       https: [
         port: 443,
